@@ -1,0 +1,51 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid;
+}
+fieldset {
+  border: none;
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+  padding: 20px;
+}
+
+fieldset div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+fieldset div label {
+  margin-bottom: 5px;
+}
+
+fieldset div input[type="checkbox"],
+fieldset div input[type="radio"] {
+  display: inline;
+}
+
+fieldset div label {
+  display: inline;
+  margin-right: 10px;
+}
+.rowDiv {
+  flex-direction: row;
+}
+#submitButton {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}

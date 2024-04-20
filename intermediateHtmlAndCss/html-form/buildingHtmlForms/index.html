@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="layout.css">
     <title>Building HTML Forms</title>
 </head>
 
@@ -23,27 +24,35 @@
                 <label for="emailAddress">Email address</label>
                 <input type="text" id="emailAddress" name="emailAddress">
             </div>
-            <div>
-                <label for="status">Status</label>
-                <select name="status" id="status">
-                    <option value="">--Please choose an option--</option>
-                    <option value="student">Student</option>
-                    <option value="teacher">Teacher</option>
-                    <option value="guest">Guest</option>
-                </select>
+            <div class="rowDiv">
+                <div>
+                    <label for="status">Status</label>
+                    <select name="status" id="status">
+                        <option value="">--Please choose an option--</option>
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="guest">Guest</option>
+                    </select>
+                </div>
+                <div><label for="currentDate">Current date:</label>
+
+                    <input type="date" id="currentDate" name="currentDate" />
+                </div>
             </div>
             <p>Choose your favorite programming language:</p>
-            <div>
-                <input type="radio" id="html" name="drone" value="html" checked />
-                <label for="html">HTML</label>
-            </div>
-            <div>
-                <input type="radio" id="css" name="drone" value="css" />
-                <label for="css">CSS</label>
-            </div>
-            <div>
-                <input type="radio" id="javaScript" name="drone" value="javaScript" />
-                <label for="javaScript">JavaScript</label>
+            <div class="rowDiv">
+                <div>
+                    <input type="radio" id="html" name="drone" value="html" checked />
+                    <label for="html">HTML</label>
+                </div>
+                <div>
+                    <input type="radio" id="css" name="drone" value="css" />
+                    <label for="css">CSS</label>
+                </div>
+                <div>
+                    <input type="radio" id="javaScript" name="drone" value="javaScript" />
+                    <label for="javaScript">JavaScript</label>
+                </div>
             </div>
             <div><label for="comments">Comments</label>
 
@@ -51,20 +60,18 @@
                     Comments...
                 </textarea>
             </div>
-            <div><label for="currentDate">Current date:</label>
-
-                <input type="date" id="currentDate" name="currentDate" />
-            </div>
-            <div>
-                <input type="checkbox" id="newsletter" name="newsletter" />
-                <label for="newsletter">Sign up for newsletter</label>
-            </div>
-            <div>
-                <input type="checkbox" id="terms" name="terms" />
-                <label for="terms">Agree to terms and conditions</label>
+            <div class="rowDiv">
+                <div>
+                    <input type="checkbox" id="newsletter" name="newsletter" />
+                    <label for="newsletter">Sign up for newsletter</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="terms" name="terms" />
+                    <label for="terms">Agree to terms and conditions</label>
+                </div>
             </div>
         </fieldset>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" id="submitButton">
 
     </form>
 </body>
