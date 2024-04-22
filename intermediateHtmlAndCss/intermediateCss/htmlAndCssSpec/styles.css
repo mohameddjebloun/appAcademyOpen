@@ -1,0 +1,56 @@
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.topHeader button {
+  background-color: transparent;
+}
+.menu {
+  border: solid 2px;
+}
+.menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+h1 {
+  border: solid 2px;
+  text-align: center;
+}
+.authorInfo {
+  display: flex;
+  justify-content: space-around;
+}
+.icon {
+  border: solid black 2px;
+  padding: 2px;
+}
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.moreLessons {
+  border: solid 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+.footer img {
+  border: solid 2px;
+  height: 100px;
+  width: 200px;
+}
+.footer ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer li {
+  margin-left: 10px;
+}
