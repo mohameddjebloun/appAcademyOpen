@@ -7,14 +7,44 @@
     <link rel="stylesheet" href="styles.css">
     <title>Real Madrid Fan Page | Fans Zone</title>
 </head>
-<nav>
-    <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./teamPage.html">Team</a></li>
-        <li><a href="./matches.html">Matches</a></li>
-        <li><a href="./fanZone.html">Fans</a></li>
-    </ul>
-</nav>
+<header>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./teamPage.html">Team</a></li>
+            <li><a href="./matches.html">Matches</a></li>
+            <li><a href="./fanZone.html">Fans</a></li>
+        </ul>
+    </nav>
+    <h1>Share Your Thoughts with Real Madrid</h1>
+</header>
+<form method="post">
+    <fieldset>
+        <legend>Contact Real Madrid</legend>
+        <label for="name">Your Name:</label>
+        <div>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div><label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+        </div>
+        <div>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+        </div>
+        <div>
+
+            <input type="checkbox" id="subscribe" name="subscribe">
+            <label for="subscribe">Subscribe to Real Madrid updates</label>
+        </div>
+
+        <button type="submit">Submit</button>
+    </fieldset>
+</form>
 
 <body>
 
