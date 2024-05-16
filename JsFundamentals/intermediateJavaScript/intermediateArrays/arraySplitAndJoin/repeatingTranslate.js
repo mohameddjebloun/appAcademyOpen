@@ -42,6 +42,11 @@ function lastVowelIndex(str) {
   return lastVowelIndex;
 }
 
+/**
+ * Translates a sentence by repeating the last syllable of words with three or more letters.
+ * @param {string} sentence - The input sentence to translate.
+ * @returns {string} - The translated sentence.
+ */
 function repeatingTranslate(sentence) {
   let words = separateString(sentence);
   for (let i = 0; i < words.length; i++) {
@@ -49,9 +54,15 @@ function repeatingTranslate(sentence) {
       let index = lastVowelIndex(words[i]);
       if (index === words[i].length - 1) {
         words[i] = words[i] + words[i];
+      } else {
+        words[i] =
+          words[i].substring(0, words[i].length) +
+          words[i].substring(index, words[i].length);
       }
     }
   }
+  let newSentence = words.join(" ");
+  return newSentence;
 }
 
 console.log(repeatingTranslate("we like to go running fast")); // "we likelike to go runninging fastast"
