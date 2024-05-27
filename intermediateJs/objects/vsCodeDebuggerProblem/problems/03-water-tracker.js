@@ -15,22 +15,22 @@ If you drank water for at least 4 days of water for every week in the calendar,
 then return true. Otherwise, return false.
 
 */
-
+debugger;
 function adequateWaterTracker(calendar) {
-  let noWater = 0;
-  let water = 0;
   for (let i = 0; i < calendar.length; i++) {
     const week = calendar[i];
-    for (let j = 0; j < week.length - 1; j++) {
-      const day = calendar[j];
-      if (day === 0) {
-        noWater++;
-      } else {
-        water++;
+    let days = 0;
+    for (let j = 0; j < week.length; j++) {
+      const day = week[j];
+      if (day !== 0) {
+        days++;
       }
     }
+    if (days < 4) {
+      return false;
+    }
   }
-  return noWater < water;
+  return true;
 }
 
 const calendar1 = [
@@ -53,4 +53,3 @@ const calendar3 = [
 ];
 
 console.log(adequateWaterTracker(calendar3)); // true
-

@@ -12,53 +12,49 @@ return `Recycle Me!`
 
 */
 
-
 function shouldRecycle(item) {
-  if (!item.plastic) {
-    return 'Recycle Me!'
-  } else if (item.color === 'black') {
-    return 'Currently, cannot be recycled.'
-  } else if (item.aluminum) {
-    return 'Recycle Me!'
-  } else if (item.paper) {
-    return 'Recycle Me!'
+  if (item.plastic && item.color !== "black") {
+    return "Recycle Me!";
+  } else if (item.plastic && item.color === "black") {
+    return "Currently, cannot be recycled.";
+  } else if (item.aluminum || item.paper) {
+    return "Recycle Me!";
   }
-  return 'Cannot be recycled'
+  return "Cannot be recycled";
 }
-
 
 const waterBottle = {
   plastic: true,
-  color: 'clear',
+  color: "clear",
   aluminum: false,
-  paper: false
+  paper: false,
 };
 
 console.log(shouldRecycle(waterBottle)); // 'Recycle Me!'
 
 const tomatoCan = {
   plastic: false,
-  color: 'red',
+  color: "red",
   aluminum: true,
-  paper: false
+  paper: false,
 };
 
 console.log(shouldRecycle(tomatoCan)); // 'Recycle Me!'
 
 const saladContainer = {
   plastic: true,
-  color: 'black',
+  color: "black",
   aluminum: false,
-  paper: false
+  paper: false,
 };
 
 console.log(shouldRecycle(saladContainer)); // 'Currently, cannot be recycled.'
 
 const styrofoamContainer = {
   plastic: false,
-  color: 'black',
+  color: "black",
   aluminum: false,
-  paper: false
+  paper: false,
 };
 
 console.log(shouldRecycle(styrofoamContainer)); // 'Cannot be recycled.'
