@@ -13,7 +13,15 @@ addToTwelve([1]); // false
 ***********************************************************************/
 
 // your code here
-
+const addToTwelve = (arr) => {
+  if (arr.length < 2) {
+    return false;
+  }
+  if (arr[0] + arr[1] === 12) {
+    return true;
+  }
+  return addToTwelve(arr.slice(1));
+};
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = addToTwelve;

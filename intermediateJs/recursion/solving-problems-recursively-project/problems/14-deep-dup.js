@@ -37,7 +37,15 @@ console.log(x[0] === y[0]) // true
 ***********************************************************************/
 
 // your code here
-
+function deepDup(arr) {
+  let duped = arr.slice();
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      duped[i] = deepDup(arr[i]);
+    }
+  }
+  return duped;
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = deepDup;

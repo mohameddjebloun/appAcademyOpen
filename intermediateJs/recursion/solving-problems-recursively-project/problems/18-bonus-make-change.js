@@ -56,16 +56,43 @@ combinations.
 function greedyMakeChange(target, coins = [25, 10, 5, 1]) {
   // no tests for greedyMakeChange so make sure to test this on your own
   // your code here
+  if (amount === 0) return [];
+  for (let coin of coins) {
+    if (coin <= amount) {
+      return [coin].concat(greedyMakeChange(amount - coin, coins));
+    }
+  }
+  return null;
 }
 
 function makeBetterChange(target, coins = [25, 10, 5, 1]) {
   // your code here
-}
 
+  if (target === 0) return [];
+  if (target < 0 || coins.length === 0) return null;
+
+  let bestChange = null;
+
+  for (let i = 0; i < coins.length; i++) {
+    let coin = coins[i];
+    let remainder = target - coin;
+
+    let remainderChange = makeBetterChange(remainder, coins.slice(i));
+
+    if (remainderChange !== null) {
+      let change = [coin].concat(remainderChange);
+      if (bestChange === null || change.length < bestChange.length) {
+        bestChange = change;
+      }
+    }
+  }
+
+  return bestChange;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = makeBetterChange
+  module.exports = makeBetterChange;
 } catch (e) {
   module.exports = null;
 }

@@ -11,6 +11,15 @@ isSorted([5, 4, 3, 2, 1]); // false
 ***********************************************************************/
 
 // your code here
+function isSorted(arr, index = 0) {
+  if (index === arr.length - 1) {
+    return true;
+  }
+  if (arr[index] > arr[index + 1]) {
+    return false;
+  }
+  return isSorted(arr, index + 1);
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

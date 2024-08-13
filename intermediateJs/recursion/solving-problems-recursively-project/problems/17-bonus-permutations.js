@@ -13,7 +13,22 @@ permutations([1, 2, 3]) // [[1, 2, 3], [1, 3, 2],
 ***********************************************************************/
 
 // your code here
+function permutations(array) {
+  if (array.length === 0) return [[]];
+  const result = [];
 
+  for (let i = 0; i < array.length; i++) {
+    const currentElement = array[i];
+    const remainingElements = array.slice(0, i).concat(array.slice(i + 1));
+    const remainingPermutations = permutations(remainingElements);
+
+    for (let perm of remainingPermutations) {
+      result.push([currentElement].concat(perm));
+    }
+  }
+
+  return result;
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = permutations;

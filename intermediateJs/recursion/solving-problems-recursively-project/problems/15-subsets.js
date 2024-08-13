@@ -15,7 +15,16 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 ***********************************************************************/
 
 // your code here
-
+function subsets(arr) {
+  if (arr.length === 0) {
+    return [[]];
+  }
+  const first = arr[0];
+  const rest = arr.slice(1);
+  const subsWithoutFirst = subsets(rest);
+  const subsWithFirst = subsWithoutFirst.map((sub) => [first, ...sub]);
+  return [...subsWithoutFirst, ...subsWithFirst];
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = subsets;
