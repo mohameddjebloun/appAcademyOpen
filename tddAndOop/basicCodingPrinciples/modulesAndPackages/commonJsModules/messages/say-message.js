@@ -1,7 +1,7 @@
-
-
+const helloMessage = require("./hello-message");
 function sayMessage(message) {
-  console.log(`"${message}"`)
+  console.log(`"${message}"`);
 }
 
-sayMessage(helloMessage);
+sayMessage(helloMessage.helloMessage);
+module.exports.sayMessage = sayMessage;
