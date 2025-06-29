@@ -1,8 +1,10 @@
-class Player {
+const { Character } = require("./character");
+const { Enemy } = require("./enemy");
+const { Food } = require("./food");
+
+class Player extends Character {
   constructor(name, startingRoom) {
-    this.name = name;
-    this.currentRoom = startingRoom;
-    this.items = [];
+    super(name, "main character", startingRoom);
   }
 
   move(direction) {
@@ -57,6 +59,14 @@ class Player {
 
   getItemByName(name) {
     return this.items.find((item) => item.name === name);
+  }
+  hit(name) {
+    // Fill this in
+  }
+
+  die() {
+    console.log("You are dead!");
+    process.exit();
   }
 }
 
